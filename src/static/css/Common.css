@@ -1,0 +1,33 @@
+/* Colors */
+/* Sizes */
+/* Widths */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(#0D0E1C);
+}
+
+.lyrics-text {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.primary-text {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.secondary-text {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+}
+
+/*# sourceMappingURL=Common.css.map */

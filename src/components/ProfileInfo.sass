@@ -1,0 +1,28 @@
+@import "../static/css/Common"
+
+.user-name
+  @extend .primary-text
+  color: $primary-text
+
+.user-id
+  @extend .secondary-text
+  color: $secondary-text
+
+.profile-container
+  width: 33%
+  display: flex
+  flex-direction: row
+  gap: $s-size
+  align-items: center
+  justify-content: flex-end
+
+.profile-info-wrapper
+  display: flex
+  flex-direction: column
+  gap: $xs-size
+  align-items: flex-start
+
+.profile-image
+  width: $xl-size
+  height: $xl-size
+  border-radius: $s-size

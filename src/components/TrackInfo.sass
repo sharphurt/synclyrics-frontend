@@ -1,0 +1,29 @@
+@import "../static/css/Common"
+
+.track-info-container
+  display: flex
+  flex-direction: row
+  gap: $s-size
+  align-items: center
+  width: 33%
+
+.vertical-wrapper
+  display: flex
+  flex-direction: column
+  gap: $xs-size
+  align-items: flex-start
+
+.track-name
+  @extend .primary-text
+  color: $primary-text
+
+.artist-name
+  @extend .secondary-text
+  color: $secondary-text
+
+.cover-image
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
