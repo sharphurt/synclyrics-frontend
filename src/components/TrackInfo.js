@@ -1,25 +1,47 @@
 import React, {useContext} from "react";
-import PlaybackState from "../context/playback/PlaybackState";
 import './TrackInfo.sass'
 import CoverButton from "./CoverButton";
-import {useSelector} from "react-redux";
+import {PlaybackContext} from "../provider/PlaybackProvider";
+import Skeleton from "react-loading-skeleton";
+import {PlaybackState} from "../api/playback/PlaybackState";
 
 const TrackInfo = () => {
-    const playbackData = useSelector((state) => state.playback)
+    const context = useContext(PlaybackContext)
 
-    return <div className="track-info-container">
-        {
-            playbackData.currentState !== PlaybackState.AD
-            && <CoverButton currentState={playbackData.currentState} coverUrl={playbackData.trackData.coverUrl}/>
+    const getCoverButton = () => {
+        if (!context.coverUrl || !context.currentState) {
+            return null
         }
 
+        return context.currentState === PlaybackState.PLAY || context.currentState === PlaybackState.PAUSE
+            ? <CoverButton currentState={context.currentState} coverUrl={context.coverUrl}/>
+            : <></>
+    }
+
+    const getTrackName = () => {
+        if (!context.trackName || !context.currentState) {
+            return null
+        }
+
+        return context.currentState === PlaybackState.AD ? "Реклама" : context.trackName
+    }
+
+    const getTrackArtist = () => {
+        if (!context.artist || !context.currentState) {
+            return null
+        }
+
+        return context.currentState === PlaybackState.AD ? "Spotify" : context.artist
+    }
+
+    return <div className="track-info-container">
+        {getCoverButton() || <Skeleton className="skeleton-avatar"/>}
         <div className="vertical-wrapper">
             <span className="track-name">
-                {playbackData.currentState === PlaybackState.AD ? "Реклама" : playbackData.trackData.trackName}
+                {getTrackName() || <Skeleton className="skeleton-text"/>}
             </span>
-
             <span className="artist-name">
-                {playbackData.currentState === PlaybackState.AD ? "Spotify" : playbackData.trackData.artist}
+                {getTrackArtist() || <Skeleton className="skeleton-text"/>}
             </span>
         </div>
     </div>

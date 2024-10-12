@@ -1,8 +1,8 @@
 import React from "react";
-import PlaybackState from "../context/playback/PlaybackState";
 import PlayIcon from "../icons/PlayIcon";
 import PauseIcon from "../icons/PauseIcon";
 import './CoverButton.sass'
+import {PlaybackState} from "../api/playback/PlaybackState";
 
 const CoverButton = (props) => {
     const getButtonIcon = () => {

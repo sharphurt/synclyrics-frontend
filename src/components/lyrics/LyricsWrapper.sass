@@ -1,0 +1,35 @@
+@import "../../static/css/Common"
+@import "../../static/css/Variables"
+
+.lyrics-wrapper
+  display: flex
+  flex-direction: column
+  gap: $m-size
+
+  height: calc(100vh - ($xxl-size + $xl-size + 6 * $l-size))
+  overflow-y: scroll
+  scroll-behavior: smooth
+
+  -ms-overflow-style: none
+  scrollbar-width: none
+
+.lyrics-wrapper::-webkit-scrollbar
+  display: none
+
+.lyrics-line
+  @extend .lyrics-text
+  color: $secondary-text
+  transition: color 0.25s ease
+
+.lyrics-line.current-line
+  color: $primary-text
+  transition: color 0.25s ease
+
+.no-lyrics-message
+  @extend .lyrics-text
+  display: flex
+  color: $secondary-text
+  height: 100%
+  align-items: center
+  text-align: center
+  justify-content: center

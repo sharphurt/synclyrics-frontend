@@ -1,0 +1,26 @@
+@import "Variables"
+
+.skeleton-text
+  display: inline-block
+  width: 180px
+  background: $dark-blue-200
+  background: linear-gradient(to right, $dark-blue-300 8%, $dark-blue-200 18%, $dark-blue-200 33%)
+  background-size: 800px 100px
+  animation: wave-lines 2s infinite ease-out
+  border-radius: 4px
+
+.skeleton-avatar
+  display: inline-block
+  background: $dark-blue-200
+  background: linear-gradient(to right, $dark-blue-300 8%, $dark-blue-200 18%, $dark-blue-200 33%)
+  background-size: 800px 100px
+  animation: wave-lines 2s infinite ease-out
+  width: $xl-size
+  height: $xl-size
+  border-radius: $s-size
+
+@keyframes wave-lines
+  0%
+    background-position: -468px 0
+  100%
+    background-position: 468px 0
