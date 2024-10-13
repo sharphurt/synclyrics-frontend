@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 import './TrackInfo.sass'
 import CoverButton from "./CoverButton";
-import {PlaybackContext} from "../provider/PlaybackProvider";
 import Skeleton from "react-loading-skeleton";
-import {PlaybackState} from "../api/playback/PlaybackState";
+import {PlaybackState} from "../../api/playback/PlaybackState";
+import {PlaybackContext} from "../../providers/PlaybackProvider";
 
 const TrackInfo = () => {
     const context = useContext(PlaybackContext)

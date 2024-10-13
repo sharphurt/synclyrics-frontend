@@ -1,17 +1,19 @@
 @import "../../static/css/Common"
-@import "../../static/css/Variables"
 
 .lyrics-wrapper
   display: flex
   flex-direction: column
-  gap: $m-size
+  gap: $s-size
+  height: 100%
 
-  height: calc(100vh - ($xxl-size + $xl-size + 6 * $l-size))
   overflow-y: scroll
   scroll-behavior: smooth
 
   -ms-overflow-style: none
   scrollbar-width: none
+
+.lyrics-wrapper.plain-lyrics .lyrics-line
+  color: $primary-text !important
 
 .lyrics-wrapper::-webkit-scrollbar
   display: none

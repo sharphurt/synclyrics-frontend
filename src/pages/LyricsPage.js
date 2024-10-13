@@ -1,7 +1,7 @@
 import React from "react";
 import './LyricsPage.sass'
-import PageHeader from "../components/PageHeader";
-import {AllProviders} from "../provider/AllProviders";
+import {AllProviders} from "../providers/AllProviders";
+import PageHeader from "../components/header/PageHeader";
 import LyricsDisplay from "../components/lyrics/LyricsDisplay";
 
 const LyricsPage = () => {

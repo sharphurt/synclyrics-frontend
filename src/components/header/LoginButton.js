@@ -1,9 +1,9 @@
 import React from 'react';
-import {UrlConstants} from "../api/UrlConstants";
+import {UrlConstants} from "../../api/UrlConstants";
 import {useCookies} from "react-cookie";
 
 const LoginButton = () => {
-    const [cookies, setCookies] = useCookies(["sessionUuid"])
+    const [, setCookies] = useCookies(["sessionUuid"])
 
     const handleLogin = () => {
         const uuid = crypto.randomUUID();

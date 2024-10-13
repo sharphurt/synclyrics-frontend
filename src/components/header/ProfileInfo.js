@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from "react";
 import './ProfileInfo.sass'
-import {getUserInfo} from "../api/user/GetUserInfo";
-import {AuthorizationContext} from "../provider/AuthorizationProvider";
 import Skeleton from "react-loading-skeleton";
+import {AuthorizationContext} from "../../providers/AuthorizationProvider";
+import {getUserInfo} from "../../api/user/GetUserInfo";
 
 const ProfileInfo = () => {
     const authorizationContext = useContext(AuthorizationContext)

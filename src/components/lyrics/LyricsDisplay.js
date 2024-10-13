@@ -1,11 +1,12 @@
 import {useContext, useEffect, useState} from "react";
-import {PlaybackContext} from "../../provider/PlaybackProvider";
+import {PlaybackContext} from "../../providers/PlaybackProvider";
 import {LyricsType} from "../../api/lyrics/LyricsType";
-import {AuthorizationContext} from "../../provider/AuthorizationProvider";
+import {AuthorizationContext} from "../../providers/AuthorizationProvider";
 import {LyricsWrapper} from "./LyricsWrapper";
 import {getLyrics} from "../../api/lyrics/GetLyrics";
 import {findLyricsLine} from "../../api/lyrics/FindLyricsLine";
 import './LyricsDisplay.sass'
+import {LyricsControlPanel} from "./LyricsControlPanel";
 
 const LyricsDisplay = () => {
     const playback = useContext(PlaybackContext)
@@ -28,11 +29,13 @@ const LyricsDisplay = () => {
     }, [playback.progress]);
 
     return <div className="lyrics-display">
-        {lyricsData && <LyricsWrapper
-            lyricsType={lyricsData.lyricsType}
-            lyrics={lyricsData.lyrics}
-            currentLine={currentLine}/>
-        }
+        {lyricsData && <>
+            <LyricsControlPanel lyricsType={lyricsData.lyricsType}/>
+            <LyricsWrapper
+                lyricsType={lyricsData.lyricsType}
+                lyrics={lyricsData.lyrics}
+                currentLine={currentLine}/>
+        </>}
     </div>
 }
 

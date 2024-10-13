@@ -1,0 +1,45 @@
+@import "../static/css/Common"
+
+$speed: 1s
+
+.audio-wave-icon
+  width: 16px
+  height: 16px
+  display: flex
+  align-items: center
+  gap: 1.5px
+
+.audio-wave-element
+  height: 3px
+  width: 1.5px
+  transform-origin: center
+  background-color: $accent
+  border-radius: 1px
+
+.audio-wave-element:nth-child(1)
+  animation: rectAnimation $speed ease infinite
+  animation-delay: 0.1s
+
+.audio-wave-element:nth-child(2)
+  animation: rectAnimation $speed ease infinite
+  animation-delay: 0.3s
+
+.audio-wave-element:nth-child(3)
+  animation: rectAnimation $speed ease infinite
+  animation-delay: 0.4s
+
+.audio-wave-element:nth-child(4)
+  animation: rectAnimation $speed ease infinite
+  animation-delay: 0.5s
+
+.audio-wave-element:nth-child(5)
+  animation: rectAnimation $speed ease infinite
+  animation-delay: 0.6s
+
+@keyframes rectAnimation
+  0%
+    height: 3px
+  50%
+    height: 13px
+  100%
+    height: 3px

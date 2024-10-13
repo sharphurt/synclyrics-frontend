@@ -1,6 +1,6 @@
 import React from "react";
-import SearchIcon from "../icons/SearchIcon";
 import './Search.sass'
+import {SearchIcon} from "../../icons/SearchIcon";
 
 const Search = () => {
     return <div className="search-field">
