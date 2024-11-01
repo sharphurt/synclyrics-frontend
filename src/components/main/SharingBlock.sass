@@ -1,0 +1,59 @@
+@import "../../static/css/Common"
+@import "../../pages/MainPage"
+
+.sharing-block-container
+  display: flex
+  justify-content: center
+  z-index: 100
+
+.sharing-block-content
+  display: flex
+  flex-direction: column
+  width: 1440px
+  gap: 80px
+
+.wb-gradient
+  background: linear-gradient(90deg, $violet 30%, $pink 50%, $pink 60%, $blue 80%, $white 100%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+  text-fill-color: transparent
+
+.image-container
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 960px
+  background-color: $ui-black
+  border-radius: 16px
+  position: relative
+  background-image: url("../../static/image/radial-bg.png")
+  background-position: center
+
+.image-container img
+  position: absolute
+  bottom: 0
+  right: 250px
+  z-index: 2
+
+.image-container:after
+  content: ""
+  position: absolute
+
+  width: 300px
+  height: 400px
+  background-color: $violet
+
+  left: 55%
+  top: 0
+  z-index: 1
+
+  filter: blur(200px)
+
+.feature-text-wrapper
+  @extend .main-primary-text
+  color: $white
+  display: block
+  width: 600px
+  word-wrap: break-word
+  padding: 48px

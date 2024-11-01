@@ -1,0 +1,49 @@
+@import "../static/css/Common"
+
+.main-page-container
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: 240px
+  background-image: url("../static/image/lead-bg.png")
+  background-size: auto
+  background-repeat: no-repeat
+  background-position-x: center
+  background-position-y: top
+  overflow: hidden
+
+.block-header
+  font-family: 'IBM Plex Sans', 'sans-serif'
+  font-style: normal
+  font-weight: 500
+  font-size: 100px
+  line-height: 100%
+  letter-spacing: -0.05em
+
+  color: $white
+
+.semibold-text
+  font-weight: 600
+
+.main-primary-text
+  font-family: 'IBM Plex Sans', 'sans-serif'
+  font-style: normal
+  font-weight: 400
+  font-size: 32px
+  line-height: 130%
+  letter-spacing: -0.02em
+  word-wrap: break-word
+
+.star
+  position: absolute
+  opacity: 0.2
+  z-index: 0
+  left: 0
+  top: 0
+  animation: star-rotation 1000s linear infinite
+@keyframes star-rotation
+  from
+    transform: translate(calc(-50% + 50vw), calc(-50% + 100vh)) rotate(0)
+  to
+    transform: translate(calc(-50% + 50vw), calc(-50% + 100vh)) rotate(360deg)

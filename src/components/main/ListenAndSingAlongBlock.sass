@@ -1,0 +1,136 @@
+@import "../../static/css/Common"
+@import "../../pages/MainPage"
+
+
+.listen-and-sing-along-block-container
+  display: flex
+  justify-content: center
+  z-index: 100
+
+.listen-and-sing-along-block-content
+  display: flex
+  flex-direction: column
+  gap: 80px
+  width: 1440px
+
+.op-gradient
+  padding: 0 10px
+  background: linear-gradient(90deg, $orange 35%, $yellow 70%, $pink 100%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.listen-and-sing-along-block-content .block-header
+  position: relative
+  width: fit-content
+
+.listen-and-sing-along-block-content .block-header:after
+  content: ""
+  position: absolute
+  z-index: -1
+  right: 0
+  top: 0.5em
+  width: 4em
+  height: 0.5em
+  opacity: 0.4
+  background-color: $yellow
+  filter: blur(80px)
+
+.step-cards-container
+  display: flex
+  flex-direction: row
+  gap: 20px
+  width: 100%
+
+.step-card
+  @extend .main-primary-text
+  position: relative
+  height: 250px
+  background-color: $ui-black
+  overflow: hidden
+  padding: 32px
+  border-radius: 16px
+  flex-basis: 33%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.filled-bg-card-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  width: 100%
+  height: 100%
+
+.orange-card-content > .blur
+  background-color: $orange
+
+.orange-card-content > .step-number
+  color: $orange
+
+.pink-card-content > .blur
+  background-color: $pink
+
+.pink-card-content > .step-number
+  color: $pink
+
+.filled-bg-card-content
+  cursor: pointer
+
+.filled-bg-card-content:after
+  content: ""
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: 0
+  inset: 0
+  background-image: url('../../static/image/gradient-bg.png')
+  background-size: cover
+  background-position: center
+  transition: transform 0.2s ease-out
+
+.filled-bg-card-content:hover:after
+  transform: scale(1.1)
+  transition: transform 0.2s ease-out
+
+.filled-bg-card-content:hover
+  transform: scale(0.97)
+  transition: transform 0.2s ease-out
+
+.filled-bg-card-content
+  transition: transform 0.2s ease-out
+
+.filled-bg-card-content *
+  z-index: 10
+
+.black-text
+  color: $bg-black !important
+
+.login-text-wrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  height: min-content
+
+.login-text-wrapper > svg
+  width: 32px
+  height: 32px
+
+.login-card-clickable
+  text-decoration: none
+  color: unset
+
+.blur
+  width: 150px
+  height: 150px
+  position: absolute
+  top: 0
+  left: 0
+  border-radius: 50%
+  transform: translate(-50%, -50%)
+  filter: blur(100px)
+
+.step-card-text
+  width: 100%
+  color: $white
+  font-weight: 400

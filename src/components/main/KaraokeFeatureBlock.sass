@@ -1,0 +1,108 @@
+@import "../../static/css/Common"
+@import "../../pages/MainPage"
+
+.karaoke-feature-block-container
+  display: flex
+  justify-content: center
+  z-index: 100
+
+.karaoke-feature-block-content
+  display: flex
+  flex-direction: column
+  gap: 48px
+  width: 1440px
+
+.by-gradient
+  padding: 0 10px
+
+  background: linear-gradient(90deg, $blue -2%, $pink 40%, $yellow 80%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.karaoke-feature-block-content .block-header
+  position: relative
+  width: fit-content
+
+.karaoke-feature-block-content .block-header:after
+  content: ""
+  position: absolute
+  z-index: -1
+  left: 0
+  top: 0.25em
+  width: 5em
+  height: 0.5em
+  opacity: 0.3
+  background: linear-gradient(90deg, $blue 0%, $blue 40%, $yellow 50%, $yellow 100%)
+  filter: blur(40px)
+
+.karaoke-cards-container
+  width: 100%
+  display: flex
+  flex-direction: row
+  gap: 20px
+  margin-top: 32px
+
+.karaoke-card
+  display: flex
+  flex-direction: column
+  gap: 32px
+  flex-grow: 1
+
+.karaoke-card svg
+  width: 32px
+  height: 32px
+
+.karaoke-card-blue svg
+  color: $blue
+
+.karaoke-card-blue .karaoke-card-icon-container
+  background-color: #1A2138
+  box-shadow: 0 0 200px 5px $blue
+
+.karaoke-card-yellow svg
+  color: $yellow
+
+.karaoke-card-yellow .karaoke-card-icon-container
+  background-color: #353220
+  box-shadow: 0 0 200px 5px $yellow
+
+
+.karaoke-card-icon-container
+  width: 64px
+  height: 64px
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 16px
+
+.karaoke-card-header
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: 32px
+
+.karaoke-card-header span
+  @extend .main-primary-text
+  font-weight: 600
+  color: $white
+
+.karaoke-card-text
+  @extend .main-primary-text
+  font-size: 24px
+  color: $secondary-white
+  max-width: 500px
+
+.karaoke-disclaimer
+  @extend .main-primary-text
+  font-size: 18px
+  color: $transparent-white
+
+.karaoke-disclaimer a
+  color: inherit
+  transition: color 0.1s ease-in
+  text-decoration: underline
+
+.karaoke-disclaimer a:hover
+  transition: color 0.1s ease-in
+  color: $secondary-white
+  text-decoration: underline

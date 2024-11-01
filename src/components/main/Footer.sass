@@ -1,0 +1,22 @@
+@import "../../pages/MainPage"
+@import "../../static/css/Common"
+
+.footer-block-container
+  display: flex
+  justify-content: center
+  z-index: 100
+
+.footer-block-content
+  display: flex
+  flex-direction: column
+  gap: 16px
+  width: 1440px
+  margin-bottom: 80px
+  margin-top: -160px
+  padding-top: 80px
+  border-top: $transparent-white solid 1px
+
+.footer-block-content span
+  @extend .main-primary-text
+  font-size: 16px
+  color: $white
