@@ -1,10 +1,13 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-              sh "/usr/bin/npm install"
-            }
-        }
+  agent any
+
+  tools {nodejs "nodejs-default"}
+
+  stages {
+    stage('Example') {
+      steps {
+        sh 'npm config ls'
+      }
     }
+  }
 }
