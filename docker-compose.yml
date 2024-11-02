@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  sinkuro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3030:3030'
