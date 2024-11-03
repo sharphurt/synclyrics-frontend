@@ -1,23 +1,21 @@
 import {useContext, useEffect, useState} from "react";
 import {PlaybackContext} from "../../providers/PlaybackProvider";
 import {LyricsType} from "../../api/lyrics/LyricsType";
-import {AuthorizationContext} from "../../providers/AuthorizationProvider";
 import {LyricsWrapper} from "./LyricsWrapper";
 import {getLyrics} from "../../api/lyrics/GetLyrics";
-import {findLyricsLine} from "../../api/lyrics/FindLyricsLine";
+import {findLyricsLine} from "../../util/lyrics/findLyricsLine";
 import './LyricsDisplay.sass'
 import {LyricsControlPanel} from "./LyricsControlPanel";
 
 const LyricsDisplay = () => {
     const playback = useContext(PlaybackContext)
-    const authorization = useContext(AuthorizationContext)
 
     const [lyricsData, setLyricsData] = useState(null)
     const [currentLine, setCurrentLine] = useState(null)
 
     useEffect(() => {
         if (playback.trackId) {
-            getLyrics(authorization.accessToken, playback.trackName, playback.artist, playback.album).then(data => setLyricsData(data))
+            getLyrics(playback.trackName, playback.artist, playback.album).then(data => setLyricsData(data))
         }
     }, [playback.trackId]);
 

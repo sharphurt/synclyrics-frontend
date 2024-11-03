@@ -1,15 +1,10 @@
 import {UrlConstants} from "../UrlConstants";
 import {LyricsType} from "./LyricsType";
 
-export const getLyrics = async (accessToken, trackName, artist, album) => {
-    if (!accessToken) {
-        return null
-    }
-
+export const getLyrics = async (trackName, artist, album) => {
     const requestOptions = {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${accessToken}`,
             'Content-Type':'application/json'
         },
         body: JSON.stringify({

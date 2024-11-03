@@ -4,6 +4,7 @@ import SpotifyCallback from "./auth/SpotifyCallback";
 import {MainPage} from "./pages/MainPage";
 import {Logo} from "./icons/Logo";
 import LoginPage from "./pages/LoginPage";
+import {TestPage} from "./pages/KaraokePage";
 
 export const App = () => {
     const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export const App = () => {
         {
             path: "/lyrics",
             element: <LyricsPage/>
+        },
+        {
+            path: "/karaoke",
+            element: <TestPage/>
         },
         {
             path: "/login",
