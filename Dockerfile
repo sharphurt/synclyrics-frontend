@@ -15,6 +15,4 @@ COPY . /usr/app
 RUN npm ci
 RUN npm run build
 
-FROM nginx:1.23.1-alpine
-EXPOSE 80
 COPY --from=build /usr/app/build /usr/share/nginx/html
