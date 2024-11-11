@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:18 as build
 
 #WORKDIR /app
 #COPY package*.json ./
@@ -14,4 +14,7 @@ WORKDIR /usr/app
 COPY . /usr/app
 RUN npm ci
 RUN npm run build
+
+from node:18 as base
+WORKDIR /usr/app
 COPY --from=build /usr/app/dist /usr/share/nginx/html
