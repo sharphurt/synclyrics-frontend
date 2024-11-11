@@ -1,11 +1,17 @@
-FROM node:18 as build
-
+FROM node:lts-alpine as build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
-ENV HTTPS=true
-ENV SSL_CRT_FILE=./ssl/sharphurt.ru.crt
-ENV SSL_KEY_FILE=./ssl/sharphurt.ru.key
-EXPOSE 3000
-CMD ["npm", "start"]
+RUN npm run build
+
+
+FROM nginx:latest as prod
+
+COPY --from=build /app/build /usr/share/nginx/html
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80/tcp
+
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+
