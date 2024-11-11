@@ -15,6 +15,6 @@ COPY . /usr/app
 RUN npm ci
 RUN npm run build
 
-from node:18 as base
-WORKDIR /usr/app
+FROM nginx:1.23.1-alpine
+EXPOSE 80
 COPY --from=build /usr/app/dist /usr/share/nginx/html
