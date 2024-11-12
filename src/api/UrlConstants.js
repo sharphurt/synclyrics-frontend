@@ -1,6 +1,6 @@
 export const UrlConstants = {
     SpotifyUrl: "https://api.spotify.com/v1",
-    LyricsUrl: "https://sharphurt.ru:8104/lyrics",
-    SessionUrl: "https://sharphurt.ru:8104/session",
-    LoginUrl: "https://sharphurt.ru:8104/login"
+    LyricsUrl: "https://sinkuro.sharphurt.ru/lyrics",
+    SessionUrl: "https://sinkuro.sharphurt.ru/session",
+    LoginUrl: "https://sinkuro.sharphurt.ru/login"
 }
